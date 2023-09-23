@@ -76,3 +76,7 @@ DerivedDataCache/*
 
 # Packaged
 /Packaged/*
+
+# Hololens ignores
+*.appx
+*.appxbundle
