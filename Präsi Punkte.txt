@@ -1,0 +1,16 @@
+Vergleich Unity Unreal MRTK application
+Zweimal das selbe Program in welchem mann Schach und Dame Spielen kann
+Projekt aufsetzen Unity viel einfacher weil Mrtk zuerst auf Unity geportet wurde
+Bei Beidem viele Plugins benötigt. Unreal aber komplizierter aufzusetzen und unklare Dinge der engine die nicht wie in einem Normalen Projekt funktionieren wie z.B. die Hide in Game Funktion in Unreal
+Ausserdem gab es in Unreal Probleme beim deployen für die Hololens obwohl das packagen selbst nach viel Troubleshooting schon funktionierte. Streaming auf das gerät lief gut (wenn der UnrealEd nicht freezed)
+	mit der ausnahme, dass bei schnellerer leistung der hololens durch viel akku kapazität das programm crashte die lies sich mit einem kleinen delay im vorraus des startens der ARSession lösen (Probrably race kondition NUR UNREAL 5.0.3).
+Transformmanipulation mittels Object Manipulator funktionierte in beiden engines obwohl in Unity nicht nur zweihändige Manipulation eingestellt werden konnte (nur ein und zweihändig)
+	Lösung damit mann nicht das Board verschiebt wenn man figuren bewegen will: Object manipulation deaktivieren während ein spiel läuft
+	in unreal kann man das nicht deactivaten oder activaten.
+Tap to place in Unreal funktioniert über den Kopf stellt man allerdings Hand ein ist im Plugin eine ungeprüfte variable ein nulptr und das programm crashed. PLUGIN PROBLEM (funktioniert in unity)
+UxtFollow funktioniert in Unity in Unreal jedoch lässt sich kein Actor to Follow setzen. Zudem lässt sich die Transform des Spielers nicht im gängigen weg abrufen, wodurch es erschwert wird die funktion selber zu schreiben
+	folglich gab es vorerst keine mögichkeit geschickt einen visuellen solver zum finden des Brettes schreiben. In unity gab es prefabs.
+Menüführung in beiden Engines gut nur gab es bei Unity Prefabs jedoch in Unreal mehr Pictogramme zur auswahl
+	Unity braucht keine extra klassen, Funktionen werden via callbacks/events ausgelöst.
+Gesten bei Unreal als beispiel die Hand up Geste um das Menü zu öffnen funktionierte einwandfrei und simpel (noch nicht in unity probiert).
+Tooltipp Spawner Funktioniert sowohl in Unity als Auch in Unreal einwandfrei. allerdings kann man in beiden engines den namen nicht dynamisch setzen, da dieser private ist 
